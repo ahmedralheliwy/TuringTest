@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turing Test</title>
+    <!-- reCAPTCHA Custom Style -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>reCAPTCHA Turing Test</h1>
+    <form class='form-container' action="{% url 'reCaptcha' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+        {{ form.name.errors }}
+        </div>
+
+        <div class="form-group">
+        {{ form.feedback.label_tag }}
+        {{ form.feedback }}
+        {{ form.feedback.errors }}
+        </div>
+
+        <div class="form-group">
+        {{ form.captcha }}
+        {{ form.captcha.errors }}
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>    
+</body>
+</html>

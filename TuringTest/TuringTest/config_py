@@ -1,0 +1,7 @@
+import os
+# Visit https://www.google.com/recaptcha/admin/create
+# Make your personal
+class Config:
+    SITE_KEY =os.environ.get('RECAPTCHA_PUBLIC_KEY','yourkey')
+    PASSWORD_KEY =os.environ.get('RECAPTCHA_PRIVATE_KEY','yourpassword')
+    
